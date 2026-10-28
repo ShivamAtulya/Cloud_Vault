@@ -1,0 +1,27 @@
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+instance/
+*.db
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Node.js and frontend builds
+node_modules/
+dist/
+.vite/
+
+# Local storage and uploads
+storage/*
+!storage/.gitkeep
+
+# Editor and OS files
+.vscode/
+.DS_Store
+Thumbs.db

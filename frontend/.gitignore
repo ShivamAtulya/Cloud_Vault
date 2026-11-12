@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# Local database
+backend/instance/
+
+# Local uploaded files
+storage/

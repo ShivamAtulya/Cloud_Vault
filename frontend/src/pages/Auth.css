@@ -1,0 +1,403 @@
+/* CloudVault Authentication & Landing Page Styling */
+
+.cv-auth-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  background-color: var(--color-bg, #f8fafc);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(37, 99, 235, 0.04) 0px, transparent 50%);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Subtle decorative cloud background elements */
+.cv-auth-bg-decor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.45;
+  color: #bfdbfe;
+}
+
+.cv-auth-bg-decor.top-left {
+  top: -40px;
+  left: -40px;
+  width: 280px;
+  height: 280px;
+}
+
+.cv-auth-bg-decor.bottom-right {
+  bottom: -50px;
+  right: -50px;
+  width: 320px;
+  height: 320px;
+}
+
+/* Centered Authentication Card */
+.cv-auth-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: #ffffff;
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: 16px;
+  padding: 38px 34px;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.04),
+    0 10px 15px -3px rgba(0, 0, 0, 0.06),
+    0 1px 3px 0 rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  animation: cvFadeIn 0.3s ease-out;
+}
+
+/* Branding & Header */
+.cv-auth-header {
+  text-align: center;
+  margin-bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cv-auth-logo-badge {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border-radius: 12px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+.cv-auth-brand-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.4px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cv-auth-brand-name span {
+  font-size: 11px;
+  font-weight: 600;
+  background-color: #eff6ff;
+  color: #2563eb;
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cv-auth-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.3px;
+}
+
+.cv-auth-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Form Styling */
+.cv-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.cv-auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  width: 100%;
+}
+
+.cv-auth-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cv-auth-input {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-sizing: border-box;
+}
+
+.cv-auth-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.cv-auth-input::placeholder {
+  color: #94a3b8;
+}
+
+/* Primary Button */
+.cv-auth-btn-primary {
+  width: 100%;
+  padding: 12px 18px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: 1px solid #1d4ed8;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2), 0 2px 4px -2px rgba(37, 99, 235, 0.1);
+  margin-top: 4px;
+}
+
+.cv-auth-btn-primary:hover:not(:disabled) {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+}
+
+.cv-auth-btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.cv-auth-btn-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Text & Auxiliary Buttons */
+.cv-auth-btn-text {
+  background: transparent;
+  border: none;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s ease;
+  text-decoration: none;
+}
+
+.cv-auth-btn-text:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.cv-auth-btn-secondary {
+  width: 100%;
+  padding: 10px 16px;
+  background-color: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cv-auth-btn-secondary:hover:not(:disabled) {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+/* Footer Section */
+.cv-auth-footer {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #f1f5f9;
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cv-auth-link {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.cv-auth-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* Message / Notification Banner */
+.cv-auth-message {
+  margin-top: 18px;
+  padding: 11px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+  line-height: 1.4;
+  animation: cvFadeIn 0.2s ease-out;
+}
+
+.cv-auth-message.info {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+}
+
+.cv-auth-message.error {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+}
+
+/* Home / Landing view */
+.cv-home-hero {
+  max-width: 520px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.cv-home-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #2563eb;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cv-home-hero h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.6px;
+}
+
+.cv-home-hero p {
+  font-size: 15px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cv-home-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.cv-home-btn {
+  flex: 1;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+.cv-home-btn-primary {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: 1px solid #1d4ed8;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+.cv-home-btn-primary:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+}
+
+.cv-home-btn-outline {
+  background-color: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+
+.cv-home-btn-outline:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+@keyframes cvFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .cv-auth-card {
+    padding: 28px 22px;
+    border-radius: 12px;
+  }
+
+  .cv-auth-title {
+    font-size: 20px;
+  }
+
+  .cv-home-hero h1 {
+    font-size: 26px;
+  }
+
+  .cv-home-actions {
+    flex-direction: column;
+  }
+}

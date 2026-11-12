@@ -1,15 +1,14 @@
-﻿# Node
+
+# Node
 node_modules/
 frontend/node_modules/
 frontend/dist/
 dist/
 
-# Environment variables and secrets
+# Environment and secrets
 .env
 .env.*
 !.env.example
-*.pem
-*.key
 
 # Python
 __pycache__/
@@ -18,17 +17,17 @@ __pycache__/
 venv/
 env/
 
-# IDE
+# Local database
+/backend/instance/
+
+# Uploaded files
+/storage/
+
+# IDE and OS
 .vscode/
 .idea/
-
-# Logs
-*.log
-
-# OS
 .DS_Store
 Thumbs.db
 
-# CloudVault local data - do not upload
-/backend/instance/
-/storage/
+# Logs
+*.log
